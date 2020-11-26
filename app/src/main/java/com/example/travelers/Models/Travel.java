@@ -22,10 +22,12 @@ public class Travel {
 
     @NonNull
     @PrimaryKey
-    private String travelId = "id";
+    private String travelId ;
     private String clientName;
     private String clientPhone;
     private String clientEmail;
+    private String clientAddress;
+
 
 
     @TypeConverters(UserLocationConverter.class)
@@ -48,8 +50,14 @@ public class Travel {
     public Travel() {
     }
 
+    public void setTravelId(String id) {
+        this.travelId=id;
+    }
 
-
+    @NonNull
+    public String getTravelId() {
+        return travelId;
+    }
 
 
     public static class DateConverter {
@@ -140,5 +148,4 @@ public class Travel {
         }
     }
 }
-	
-	
+
