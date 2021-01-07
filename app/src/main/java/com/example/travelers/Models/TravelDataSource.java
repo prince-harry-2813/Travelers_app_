@@ -1,6 +1,8 @@
 package com.example.travelers.Models;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -10,12 +12,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class TravelDataSource {
+public class TravelDataSource extends AppCompatActivity {
 
 
 
     private MutableLiveData<Boolean> isSuccess= new MutableLiveData<>();
-    public MutableLiveData<Boolean> getIsSuccess() {
+    public LiveData<Boolean> getIsSuccess() {
         return isSuccess;
     }
 
@@ -39,8 +41,7 @@ public class TravelDataSource {
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference travels = firebaseDatabase.getReference("ExistingTravels");
 
-    private TravelDataSource() {
-
+    public TravelDataSource() {
     }
 
     private static TravelDataSource instance;

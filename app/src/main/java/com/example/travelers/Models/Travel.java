@@ -6,8 +6,6 @@ import androidx.room.PrimaryKey;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
-import com.example.travelers.Utils.UserLocation;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

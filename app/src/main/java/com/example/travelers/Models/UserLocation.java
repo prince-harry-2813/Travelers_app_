@@ -1,4 +1,5 @@
-package com.example.travelers.Utils;
+package com.example.travelers.Models;
+
 import android.location.Location;
 
 public class UserLocation {
@@ -18,8 +19,20 @@ public class UserLocation {
         this.lon = lon;
     }
 
+    @Override
+    public String toString() {
+        return "UserLocation{" +
+                "lat=" + lat +
+                ", lon=" + lon +
+                '}';
+    }
+
     public UserLocation() {
     }
+
+
+
+
 
     public UserLocation convertFromLocation(Location location){
         if (location==null)
