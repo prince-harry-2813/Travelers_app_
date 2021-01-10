@@ -20,7 +20,7 @@ public class TravelViewModel extends ViewModel {
         repository = new Repository();
     }
 
-    public LiveData<Boolean> updateTravel(Travel travel){
+    public LiveData<Boolean> updateTravel(){
         return repository.travelUpdate();
     }
 

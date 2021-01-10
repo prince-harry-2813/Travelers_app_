@@ -1,5 +1,6 @@
 package com.example.travelers.UI;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
@@ -46,6 +47,26 @@ public class AddTravelActivity extends AppCompatActivity {
 
     boolean Express;
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_add_travel);
 
+    travelViewModel= new  ViewModelProvider(this).get(TravelViewModel.class);
+    travelViewModel.updateTravel().observe(this, new Observer<Boolean>() {
+        @Override
+        public void onChanged(Boolean aBoolean) {
+            if (aBoolean)
+                success();
+            else
+                failed();
+        }
+    });
+    }
 
+    private void failed() {
+    }
+
+    private void success() {
+    }
 }
